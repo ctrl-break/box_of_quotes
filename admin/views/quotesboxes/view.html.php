@@ -28,9 +28,19 @@ class QuotesBoxViewQuotesBoxes extends JViewLegacy
 	 */
 	 function display($tpl = null)
  	{
+		// Get application
+		$app = JFactory::getApplication();
+		$context = "quotesbox.list.admin.quotesbox";
+
  		// Get data from the model
- 		$items      = $this->get('Items');
- 		$pagination = $this->get('Pagination');
+		$this->items			= $this->get('Items');
+		$this->pagination		= $this->get('Pagination');
+		$this->state			= $this->get('State');
+		$this->filter_order 	= $app->getUserStateFromRequest($context.'filter_order', 'filter_order', 'quote', 'cmd');
+		$this->filter_order_Dir = $app->getUserStateFromRequest($context.'filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
+		$this->filterForm    	= $this->get('FilterForm');
+		$this->activeFilters 	= $this->get('ActiveFilters');
+
  		// Check for errors.
  		if (count($errors = $this->get('Errors')))
  		{
@@ -41,11 +51,11 @@ class QuotesBoxViewQuotesBoxes extends JViewLegacy
 		// Set the toolbar
 		$this->addToolBar();
 
- 		// Assign data to the view
- 		$this->items      = $items;
- 		$this->pagination = $pagination;
  		// Display the template
  		parent::display($tpl);
+
+ 		// Set the document
+ 		$this->setDocument();
  	}
 
 	/**
@@ -57,9 +67,27 @@ class QuotesBoxViewQuotesBoxes extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-		JToolBarHelper::title(JText::_('COM_QUOTESBOX_MANAGER_QUOTESBOXES'));
-		JToolBarHelper::addNew('quotesbox.add');
+		$title = JText::_('COM_QUOTESBOX_MANAGER_QUOTESBOXES');
+
+		if ($this->pagination->total)
+		{
+			$title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
+		}
+
+		JToolBarHelper::title($title, 'quotesbox');
+		JToolBarHelper::deleteList('', 'quotesboxes.delete');
 		JToolBarHelper::editList('quotesbox.edit');
-		JToolBarHelper::deleteList('', 'quotesbox.delete');
+		JToolBarHelper::addNew('quotesbox.add');
+	}
+
+	/**
+	 * Method to set up the document properties
+	 *
+	 * @return void
+	 */
+	protected function setDocument()
+	{
+		$document = JFactory::getDocument();
+		$document->setTitle(JText::_('COM_QUOTESBOX_ADMINISTRATION'));
 	}
 }

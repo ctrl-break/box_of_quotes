@@ -10,8 +10,9 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
-// import joomla controller library
-jimport('joomla.application.component.controller');
+// Set some global property
+$document = JFactory::getDocument();
+ 
 
 // Get an instance of the controller prefixed by QuotesBox
 $controller = JControllerLegacy::getInstance('QuotesBox');

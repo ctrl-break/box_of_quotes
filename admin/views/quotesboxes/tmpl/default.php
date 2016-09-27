@@ -9,21 +9,35 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted Access');
-// load tooltip behavior
-JHtml::_('behavior.tooltip');
+
+JHtml::_('formbehavior.chosen', 'select');
+
+$listOrder     = $this->escape($this->filter_order);
+$listDirn      = $this->escape($this->filter_order_Dir);
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_quotesbox'); ?>" method="post" name="adminForm">
+	<div class="row-fluid">
+		<div class="span6">
+			<?php echo JText::_('COM_QUOTESBOX_QUOTESBOXES_FILTER'); ?>
+			<?php
+				echo JLayoutHelper::render(
+					'joomla.searchtools.default',
+					array('view' => $this)
+				);
+			?>
+		</div>
+	</div>
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
-				<th width="20">
+				<th width="2%">
 					<?php echo JHtml::_('grid.checkall'); ?>
 				</th>
-				<th>
-					<?php echo JText::_('COM_QUOTESBOX_QUOTESBOX_HEADING_GREETING'); ?>
+				<th width="90%">
+					<?php echo JHtml::_('grid.sort', 'COM_QUOTESBOX_QUOTESBOXES_NAME', 'quote', $listDirn, $listOrder); ?>
 				</th>
-				<th width="5">
-					<?php echo JText::_('COM_QUOTESBOX_QUOTESBOX_HEADING_ID'); ?>
+				<th width="2%">
+					<?php echo JHtml::_('grid.sort', 'COM_QUOTESBOX_ID', 'id', $listDirn, $listOrder); ?>
 				</th>
 			</tr>
 		</thead>
@@ -60,5 +74,7 @@ JHtml::_('behavior.tooltip');
 	</table>
 	<input type="hidden" name="task" value=""/>
 	<input type="hidden" name="boxchecked" value="0"/>
+	<input type="hidden" name="filter_order" value="<?php echo $listOrder; ?>"/>
+	<input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>"/>
 	<?php echo JHtml::_('form.token'); ?>
 </form>
