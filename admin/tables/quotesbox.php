@@ -9,6 +9,8 @@
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
+// import Joomla table library
+jimport('joomla.database.table');
 /**
  * Quotes Box class
  *

@@ -9,6 +9,9 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
+// import the Joomla modellist library
+jimport('joomla.application.component.modellist');
+
 /**
  * QuotesBoxList Model
  *
@@ -28,8 +31,9 @@ class QuotesBoxModelQuotesBoxes extends JModelList
 		$query = $db->getQuery(true);
 
 		// Create the base select statement.
-		$query->select('*')
-                ->from($db->quoteName('#__quotesbox'));
+		$query
+			->select('id,quote')
+			->from('#__quotesbox');
 
 		return $query;
 	}
