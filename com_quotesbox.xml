@@ -6,7 +6,7 @@
 	<authorUrl>https://github.com/ctrl-break/box_of_quotes</authorUrl>
 	<copyright>Copyright (C) 2016 Alexander Bashenin</copyright>
 	<license>http://www.gnu.org/licenses/gpl-3.0.en.html</license>
-	<version>0.0.6</version>
+	<version>0.0.7</version>
 	<creationDate>27 September, 2016</creationDate>
 	<description><![CDATA[
     <p>Allows you to create and display quotes and their authors.
@@ -38,7 +38,7 @@
 	</files>
 
 	<administration>
-		<menu link="option=com_quotesbox">com_quotesbox</menu>
+		<menu link="option=com_quotesbox">Box of Quotes</menu>
 
 		<files folder="admin">
 			<folder>controllers</folder>
