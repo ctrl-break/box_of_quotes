@@ -6,64 +6,49 @@
 	<authorUrl>https://github.com/ctrl-break/box_of_quotes</authorUrl>
 	<copyright>Copyright (C) 2016 Alexander Bashenin</copyright>
 	<license>http://www.gnu.org/licenses/gpl-3.0.en.html</license>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<creationDate>27 September, 2016</creationDate>
 	<description><![CDATA[
-    <p>Allows you to create and display quotes and their authors. Quotes can be displayed randomly or show the quote of the day.</p>
+    <p>Allows you to create and display quotes and their authors.
+			 Quotes can be displayed randomly or show the quote of the day.</p>
     ]]></description>
 
 	<install>
         <sql>
             <file driver="mysql" charset="utf8">sql/install.sql</file>
         </sql>
-    </install>
+  </install>
 
-    <uninstall>
+  <uninstall>
         <sql>
             <file driver="mysql" charset="utf8">sql/uninstall.sql</file>
         </sql>
-    </uninstall>
-	
-	<update> 
+  </uninstall>
+
+	<update>
 		<schemas>
 			<schemapath type="mysql">sql/updates</schemapath>
 		</schemas>
 	</update>
-	
-	<media destination="com_quotesbox" folder="media">
-		<folder>css</folder>
-		<folder>images</folder>
-		<folder>js</folder>		
-	</media>
-	
+
 	<files folder="site">
-        <folder>controllers</folder>
-        <folder>helpers</folder>
-        <folder>language</folder>
-        <folder>models</folder>
-        <folder>views</folder>
+    <folder>models</folder>
+    <folder>views</folder>
 		<filename>controller.php</filename>
-		<filename>router.php</filename>
-		<filename>vipquotes.php</filename>
+		<filename>quotesbox.php</filename>
 	</files>
 
 	<administration>
 		<menu link="option=com_quotesbox">com_quotesbox</menu>
-	
-		<files folder="admin">		    		
+
+		<files folder="admin">
 			<folder>controllers</folder>
-			<folder>helpers</folder>
-			<folder>language</folder>
-			<folder>models</folder>
-			<folder>tables</folder>
 			<folder>sql</folder>
 			<folder>views</folder>
-            
-			<filename>access.xml</filename>
+
 			<filename>controller.php</filename>
-			<filename>config.xml</filename>
 			<filename>quotesbox.php</filename>
 		</files>
-        
+
 	</administration>
 </extension>
