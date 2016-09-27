@@ -37,10 +37,29 @@ class QuotesBoxViewQuotesBoxes extends JViewLegacy
  			JError::raiseError(500, implode('<br />', $errors));
  			return false;
  		}
+
+		// Set the toolbar
+		$this->addToolBar();
+
  		// Assign data to the view
  		$this->items      = $items;
  		$this->pagination = $pagination;
  		// Display the template
  		parent::display($tpl);
  	}
+
+	/**
+	 * Add the page title and toolbar.
+	 *
+	 * @return  void
+	 *
+	 * @since   1.6
+	 */
+	protected function addToolBar()
+	{
+		JToolBarHelper::title(JText::_('COM_QUOTESBOX_MANAGER_QUOTESBOXES'));
+		JToolBarHelper::addNew('quotesbox.add');
+		JToolBarHelper::editList('quotesbox.edit');
+		JToolBarHelper::deleteList('', 'quotesbox.delete');
+	}
 }
