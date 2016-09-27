@@ -6,30 +6,29 @@
 	<authorUrl>https://github.com/ctrl-break/box_of_quotes</authorUrl>
 	<copyright>Copyright (C) 2016 Alexander Bashenin</copyright>
 	<license>http://www.gnu.org/licenses/gpl-3.0.en.html</license>
-	<version>0.0.4</version>
+	<version>0.0.6</version>
 	<creationDate>27 September, 2016</creationDate>
 	<description><![CDATA[
     <p>Allows you to create and display quotes and their authors.
 			 Quotes can be displayed randomly or show the quote of the day.</p>
     ]]></description>
 
-	<install>
-        <sql>
-            <file driver="mysql" charset="utf8">sql/install.sql</file>
-        </sql>
-  </install>
+		<install> <!-- Runs on install -->
+			<sql>
+				<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+			</sql>
+		</install>
+		<uninstall> <!-- Runs on uninstall -->
+			<sql>
+				<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+			</sql>
+		</uninstall>
 
-  <uninstall>
-        <sql>
-            <file driver="mysql" charset="utf8">sql/uninstall.sql</file>
-        </sql>
-  </uninstall>
-
-	<update>
-		<schemas>
-			<schemapath type="mysql">sql/updates</schemapath>
-		</schemas>
-	</update>
+		<update> <!-- Runs on update; New since J2.5 -->
+			<schemas>
+				<schemapath type="mysql">sql/updates/mysql</schemapath>
+			</schemas>
+		</update>
 
 	<files folder="site">
     <folder>models</folder>
@@ -45,7 +44,10 @@
 			<folder>controllers</folder>
 			<folder>sql</folder>
 			<folder>views</folder>
-
+			<!-- tables files section -->
+			<folder>tables</folder>
+			<!-- models files section -->
+			<folder>models</folder>
 			<filename>controller.php</filename>
 			<filename>quotesbox.php</filename>
 		</files>
