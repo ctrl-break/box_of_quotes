@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class QuotesBoxViewHelloWorld extends JViewLegacy
+class QuotesBoxViewQuotesBox extends JViewLegacy
 {
 	/**
 	 * Display the Quotes Box view
