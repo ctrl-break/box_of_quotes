@@ -19,17 +19,5 @@ defined('_JEXEC') or die('Restricted access');
  */
 class QuotesBoxController extends JControllerLegacy
 {
-	/**
-	 * display task
-	 *
-	 * @return void
-	 */
-	function display($cachable = false, $urlparams = false)
-	{
-		// set default view if not set
-		$input = JFactory::getApplication()->input;
-		$input->set('view', $input->getCmd('view', 'QuotesBoxes'));
-		// call parent behavior
-		parent::display($cachable);
-	}
+		protected $default_view = 'quotes';
 }

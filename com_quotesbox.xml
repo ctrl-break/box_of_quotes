@@ -6,7 +6,7 @@
 	<authorUrl>https://github.com/ctrl-break/box_of_quotes</authorUrl>
 	<copyright>Copyright (C) 2016 Alexander Bashenin</copyright>
 	<license>http://www.gnu.org/licenses/gpl-3.0.en.html</license>
-	<version>0.0.11</version>
+	<version>0.0.13</version>
 	<creationDate>27 September, 2016</creationDate>
 	<description><![CDATA[
     <p>Allows you to create and display quotes and their authors.
@@ -29,14 +29,6 @@
 				<schemapath type="mysql">sql/updates/mysql</schemapath>
 			</schemas>
 		</update>
-
-	<files folder="site">
-    <folder>models</folder>
-    <folder>views</folder>
-		<folder>language</folder>
-		<filename>controller.php</filename>
-		<filename>quotesbox.php</filename>
-	</files>
 
 	<administration>
 		<menu link="option=com_quotesbox">COM_QUOTESBOX_MENU</menu>
