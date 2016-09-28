@@ -25,7 +25,7 @@ class QuotesBoxModelQuote extends JModelAdmin
      *
      * @since   1.6
      */
-    public function getTable($type = 'QuotesBox', $prefix = 'QuotesBoxTable', $config = array())
+    public function getTable($type = 'Quote', $prefix = 'QuotesBoxTable', $config = array())
     {
         return JTable::getInstance($type, $prefix, $config);
     }
@@ -33,7 +33,7 @@ class QuotesBoxModelQuote extends JModelAdmin
     public function getForm($data = array(), $loadData = true)
     {
         $form = $this->loadForm('com_quotesbox.quote',
-				                        'quote',
+                                        'quote',
                                  array('control' => 'jform', 'load_data' => $loadData));
         if (empty($form)) {
             return false;
@@ -42,8 +42,19 @@ class QuotesBoxModelQuote extends JModelAdmin
         return $form;
     }
 
-		public function getQuote()
-		{
-			return true;
-		}
+    protected function loadFormData()
+    {
+        $data = $this->getItem();
+
+        return $data;
+    }
+
+    public function getQuote($pk = null)
+    {
+        if ($item = parent::getItem($pk)) {
+            return $item;
+        }
+
+        return false;
+    }
 }

@@ -1,16 +1,18 @@
 <?php
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+
+JHtml::_('behavior.formvalidation');
 ?>
 
-<form action="index.php?option=com_quotesbox&layout=edit&id=<?php echo (int) $this->quote?>"
-      method="post" id="adminForm" name="adminForm">
+<form action="index.php?option=com_quotesbox&layout=edit&id=<?php echo $this->quote->id?>"
+      method="post" id="adminForm" name="adminForm" class="form-validate">
       <div class="form-horizontal">
 
-      <?php foreach ($this->form->getFieldsets() as $name => $field): ?>
+      <?php foreach ($this->form->getFieldsets() as $name => $fieldset): ?>
 
         <fieldset class="adminform">
-            <legend><?php echo JText::_('COM_QUOTESBOX_'); ?></legend>
+            <legend><?php echo JText::_($fieldset->label); ?></legend>
             <div class="row-fluid">
                 <div class="span6">
                     <?php foreach ($this->form->getFieldset() as $field): ?>
@@ -24,7 +26,7 @@ defined('_JEXEC') or die('Restricted access');
         </fieldset>
 
       <?php endforeach; ?>
-      
+
       </div>
       <input type="hidden" name="task" value="" />
       <?php echo JHtml::_('form.token'); ?>

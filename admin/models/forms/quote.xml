@@ -8,10 +8,12 @@
   				/>
   		<field
   				name="quote"
-  				type="editor"
+          type="textarea"
   				label="COM_QUOTESBOX_QUOTE_LABEL"
   				description="COM_QUOTESBOX_QUOTE_DESC"
-          buttons="true"
+  				rows="10"
+          cols="5"
+  				default=""
           required="true"
   				/>
   		<field
@@ -22,6 +24,7 @@
   				size="40"
   				class="inputbox"
   				default=""
+          required="true"
   				/>
   	</fieldset>
 </form>
