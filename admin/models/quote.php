@@ -44,7 +44,7 @@ class QuotesBoxModelQuote extends JModelAdmin
 
     protected function loadFormData()
     {
-        $data = $this->getItem();
+        $data = $this->getQuote();
 
         return $data;
     }

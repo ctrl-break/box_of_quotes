@@ -5,8 +5,14 @@ defined('_JEXEC') or die('Restricted access');
 
 class QuotesBoxViewQuotes extends JViewLegacy
 {
+    protected $quotes;
+    protected $pagination;
+
     public function display($tpl = null)
     {
+        $this->quotes = $this->get('Items');
+        $this->pagination = $this->get('Pagination');
+
         $this->addToolBar();
         parent::display($tpl);
 
