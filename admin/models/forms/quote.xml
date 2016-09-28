@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form>
+    <fieldset name="details" label="COM_QUOTESBOX_QUOTE_DETAIL">
+  		<field
+  				name="id"
+  				type="hidden"
+  				/>
+  		<field
+  				name="quote"
+  				type="editor"
+  				label="COM_QUOTESBOX_QUOTE_LABEL"
+  				description="COM_QUOTESBOX_QUOTE_DESC"
+          buttons="true"
+          required="true"
+  				/>
+  		<field
+  				name="author"
+  				type="text"
+          label="COM_QUOTESBOX_AUTHOR_LABEL"
+  				description="COM_QUOTESBOX_AUTHOR_DESC"
+  				size="40"
+  				class="inputbox"
+  				default=""
+  				/>
+  	</fieldset>
+</form>
