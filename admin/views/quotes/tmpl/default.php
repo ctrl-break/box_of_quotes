@@ -13,5 +13,6 @@ defined('_JEXEC') or die('Restricted access');
   	</table>
 
     <input type="hidden" name="task" value="">
+    <input type="hidden" name="boxchecked" value="0" />
     <?php echo JHtml::_('form.token'); ?>
 </form>

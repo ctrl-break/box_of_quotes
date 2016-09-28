@@ -16,6 +16,9 @@ defined('_JEXEC') or die('Restricted Access');
               		<td>
               			<?php echo $row->author; ?>
               		</td>
+              		<td>
+              			<?php echo $row->id; ?>
+              		</td>
               </tr>
       <?php endforeach; ?>
   <?php endif; ?>

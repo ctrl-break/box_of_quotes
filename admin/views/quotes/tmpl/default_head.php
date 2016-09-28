@@ -10,10 +10,13 @@ defined('_JEXEC') or die('Restricted Access');
 	<th width="5%">
 		<?php echo JHtml::_('grid.checkall'); ?>
 	</th>
-	<th width="70%">
+	<th width="65%">
 		<?php echo JText::_('COM_QUOTESBOX_QUOTE_TITLE'); ?>
 	</th>
 	<th width="22%">
 		<?php echo JText::_('COM_QUOTESBOX_QUOTE_AUTHOR'); ?>
+	</th>
+	<th width="5%">
+		<?php echo JText::_('COM_QUOTESBOX_QUOTE_ID'); ?>
 	</th>
 </tr>

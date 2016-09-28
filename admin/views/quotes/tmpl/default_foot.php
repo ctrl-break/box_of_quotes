@@ -3,7 +3,7 @@
 defined('_JEXEC') or die('Restricted Access');
 ?>
 <tr>
-    <td colspan="4">
+    <td colspan="5">
 
     </td>
 </tr>
