@@ -2,7 +2,7 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
-JHtml::_('behavior.formvalidation');
+JHtml::_('behavior.formvalidator');
 ?>
 
 <form action="index.php?option=com_quotesbox&layout=edit&id=<?php echo $this->quote->id?>"
