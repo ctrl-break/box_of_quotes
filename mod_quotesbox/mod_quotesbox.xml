@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.6.0" client="site" method="upgrade">
+  <name>COM_QUOTESBOX</name>
+	<author>Alexander Bashenin</author>
+  <version>0.0.3</version>
+  <description><![CDATA[
+    <p>Allows you to create and display quotes and their authors.
+			 Quotes can be displayed randomly or show the quote of the day.</p>
+    ]]></description>
+
+    <files>
+        <filename>mod_quotesbox.xml</filename>
+        <filename module="mod_quotesbox">mod_quotesbox.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+<config>
+  <fields name="params">
+      <fieldset name="basic">
+       	<field name="rotate"
+       		type="list"
+       		default="random"
+       		label="MOD_QUOTESBOX_ROTATE_LABEL"
+       		description="MOD_QUOTESBOX_ROTATE_DESC" >
+      			<option value ="random">SELECT_SINGLE_RANDOM</option>
+      			<option value ="daily">SELECT_DB_DAILY</option>
+      	</field>
+        <field
+          name="catid"
+          type="category"
+          label="JCATEGORY"
+          description="MOD_QUOTESBOX_CATEGORY_DESC"
+          extension="com_quotesbox"
+          multiple="true"
+          size="5"
+          default="79"
+          >
+          <option value="">JOPTION_ALL_CATEGORIES</option>
+        </field>
+      </fieldset>
+  </fields>
+</config>
+</extension>
