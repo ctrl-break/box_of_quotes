@@ -35,7 +35,7 @@
           extension="com_quotesbox"
           multiple="true"
           size="5"
-          default="79"
+          default="14"
           >
           <option value="">JOPTION_ALL_CATEGORIES</option>
         </field>

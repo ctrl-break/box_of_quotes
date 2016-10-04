@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.6" method="upgrade">
+        <name>Box of quotes</name>
+        <packagename>quotesbox</packagename>
+        <author>Alexander Bashenin</author>
+        <creationDate>4 October, 2016</creationDate>
+        <version>0.1.5</version>
+		<authorUrl>https://github.com/ctrl-break/box_of_quotes</authorUrl>
+		<copyright>Copyright (C) 2016 Alexander Bashenin</copyright>
+		<license>http://www.gnu.org/licenses/gpl-3.0.en.html</license>
+        <authorEmail>ctrl-break@mail.ru</authorEmail>
+
+        <description>Allows you to create and display quotes and their authors. Quotes can be displayed randomly or show the quote of the day.</description>
+
+        <files folder="packages">
+               <file type="module" id="mod_quotesbox" client="site">mod_quotesbox.zip</file>
+               <file type="component" id="com_quotesbox" group="content">com_quotesbox.zip</file>
+        </files>
+</extension>
