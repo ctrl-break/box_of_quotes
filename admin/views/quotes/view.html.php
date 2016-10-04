@@ -13,6 +13,9 @@ class QuotesBoxViewQuotes extends JViewLegacy
         $this->quotes = $this->get('Items');
         $this->pagination = $this->get('Pagination');
 
+        // Set the submenu
+    		QuotesBoxHelper::addSubmenu('quotes');
+
         $this->addToolBar();
         parent::display($tpl);
 

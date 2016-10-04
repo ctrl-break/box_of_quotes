@@ -10,6 +10,9 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
+// Require helper file
+JLoader::register('QuotesBoxHelper', JPATH_COMPONENT . '/helpers/quotesbox.php');
+
 // Get an instance of the controller prefixed by QuotesBox
 $controller = JControllerLegacy::getInstance('QuotesBox');
 
